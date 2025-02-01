@@ -15,7 +15,7 @@ int Array::maxIndexDiff(std::vector<int> arr) {
     return maxDiff;
 }
 
-int maxIndexDiff2(std::vector<int> arr) {
+int Array::maxIndexDiff2(std::vector<int> arr) {
      int n = arr.size();
         if (n == 1) {
             return 0;
@@ -53,3 +53,106 @@ int maxIndexDiff2(std::vector<int> arr) {
         return maxDiff;
     
 }
+
+  vector<int> Array::largestAndSecondLargest(int sizeOfArray, int arr[]){
+        int max = INT_MIN, max2= INT_MIN;
+        
+        /*********************************
+         * Your code here
+         * This function should return a
+         * vector with first element as
+         * max and second element as 
+         * second max
+         * *******************************/
+         vector<int> maxAndSecondMax;
+         max=arr[0];
+         max2=-1;
+         for(int i=1;i<sizeOfArray;i++)
+         {
+             if(max<arr[i])
+             {
+                 max2 = max;
+                 max = arr[i];
+             }
+             if(max2<arr[i] && max!=arr[i])
+             {
+                 max2 = arr[i];
+             }
+         }
+         maxAndSecondMax.push_back(max);
+         maxAndSecondMax.push_back(max2);
+         return maxAndSecondMax;
+         
+    }
+
+bool Array::checkRotatedAndSorted(const vector<int>& arr) {
+         int n = arr.size();
+    if (n <= 1) return false;
+
+    int increasing = 0, decreasing = 0;
+
+    // Check for increasing order
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] < arr[i - 1]) {
+            increasing = i;
+            break;
+        }
+        cout<<arr[i]<<"< ";
+    }
+    
+    cout<<endl;
+    cout<<"increasing: "<<increasing<<endl;
+
+    // Check for decreasing order
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] > arr[i - 1]) {
+            decreasing = i;
+            break;
+        }
+        cout<<arr[i]<<" >";
+    }
+    cout<<endl;
+    cout<<"decreasing: "<<decreasing<<endl;
+
+    // Check if the array is sorted and rotated in increasing order
+    bool isIncreasingRotated = (increasing != 0) && (arr[n - 1] <= arr[0]);
+    for (int i = increasing + 1; i < n; ++i) {
+        if (arr[i] < arr[i - 1]) {
+            isIncreasingRotated = false;
+            break;
+        }
+    }
+
+    // Check if the array is sorted and rotated in decreasing order
+    bool isDecreasingRotated = (decreasing != 0) && (arr[n - 1] >= arr[0]);
+    for (int i = decreasing + 1; i < n; ++i) {
+        if (arr[i] > arr[i - 1]) {
+            isDecreasingRotated = false;
+            break;
+        }
+    }
+
+    return isIncreasingRotated || isDecreasingRotated;
+    }
+
+void Array::reverseInGroups(vector<long long int> &arr, int k) {
+        // code here
+        int low=0;
+        int high=k-1;
+        int temp=0;
+        bool firstGrpDone=false;
+        while(low<high)
+        {
+            temp=arr[low];
+            arr[low]=arr[high];
+            arr[high]=temp;
+            low++;
+            high--;
+            if(low>=high && firstGrpDone==false)
+            {
+                low=k;
+                high=arr.size() -1 ;
+                firstGrpDone=true;
+            }
+        }
+    }
