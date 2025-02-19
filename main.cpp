@@ -24,7 +24,21 @@ int main() {
     }
     std::cout << std::endl;
     int arr5[] = {4, 5, 3, 2, 5};
-    a.range_sum(arr5,5);
+   // a.range_sum(arr5,5);
+    std::cout<<"equilibrium point"<<std::endl;
+    int arr6[] = {2,-5,3,1,-4};
+    a.equilibrium_point(arr6,5);
+    std::cout<<"equilibrium point2"<<std::endl;
+    a.equilibrium_point2(arr6,5);
+    std::cout<<"maxSubArraySum"<<std::endl;
+    int arr8[] = {-3,4,-1,-2,1,5};
+    std::cout << a.maxSubArraySum(arr8,6) << std::endl;
+
+    std::cout<<"mergeTwoSortedArrays"<<std::endl;
+    int arr9[] = {1,3,5,7};
+    int arr10[] = {0,2,6,8,9};
+    a.mergeTwoSortedArrays(arr9,arr10,4,5);
+
 
 
     return 0;

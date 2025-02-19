@@ -183,3 +183,97 @@ void Array::reverseInGroups(vector<long long int> &arr, int k) {
             }
         }
     }
+
+//naive approach
+void Array::equilibrium_point2(int arr[], int n)
+{
+   
+    for(int i=0;i<n;i++)
+    {
+        int lsum=0;
+        int rsum=0;
+        for(int j=0;j<i;j++)
+        {
+            lsum+=arr[j];
+        }
+        for(int j=i+1;j<n;j++)
+        {
+            rsum+=arr[j];
+        }
+        if(lsum==rsum)
+        {
+            cout<<i+1<<endl;
+            return;
+        }
+    }
+}
+
+//efficient approach
+    void Array::equilibrium_point(int arr[], int n)
+    {
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            sum+=arr[i];
+        }
+        int left_sum=0;
+        for(int i=0;i<n;i++)
+        {
+            sum-=arr[i];
+            if(left_sum==sum)
+            {
+                cout<<i+1<<endl;
+                return;
+            }
+            left_sum+=arr[i];
+        }
+        cout<<-1<<endl;
+    }
+
+    int Array::maxSubArraySum(int a[], int size)
+    {
+        int max_so_far = INT_MIN, max_ending_here = 0;
+        for (int i = 0; i < size; i++)
+        {
+         //   cout<<max_so_far<<" "<<max_ending_here<<endl;
+            max_ending_here = max_ending_here + a[i];
+            if (max_so_far < max_ending_here)
+                max_so_far = max_ending_here;
+            if (max_ending_here < 0)
+                max_ending_here = 0;
+        }
+        return max_so_far;
+    }
+
+    void Array::mergeTwoSortedArrays(int arr1[], int arr2[], int n, int m)
+    {
+        int i=0,j=0,k=0;
+        int array[n+m];
+        while(i<n && j<m)
+        {
+            if(arr1[i]<arr2[j])
+            {
+                array[k++]=arr1[i];
+                i++;
+            }
+            else
+            {
+                array[k++]=arr2[j];
+                j++;
+            }
+        }
+        while(i<n)
+        {
+            array[k++]=arr1[i];
+            i++;
+        }
+        while(j<m)
+        {
+            array[k++]=arr2[j];
+            j++;
+        }
+        for(int i=0;i<n+m;i++)
+        {
+            cout<<array[i]<<" ";
+        }
+    }
