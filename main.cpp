@@ -22,6 +22,9 @@ int main() {
     for (int i = 0; i < arr4.size(); ++i) {
         std::cout << arr4[i] << " ";
     }
+    std::cout << std::endl;
+    int arr5[] = {4, 5, 3, 2, 5};
+    a.range_sum(arr5,5);
 
 
     return 0;

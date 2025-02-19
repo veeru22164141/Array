@@ -14,6 +14,7 @@ class Array {
         std::vector<int> largestAndSecondLargest(int sizeOfArray, int arr[]);
         bool checkRotatedAndSorted(const std::vector<int>& arr);
         void reverseInGroups(std::vector<long long int> &arr, int k);
+        void range_sum(int array[],int size);
 };
 
 #endif // ARRAY_H

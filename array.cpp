@@ -156,3 +156,30 @@ void Array::reverseInGroups(vector<long long int> &arr, int k) {
             }
         }
     }
+
+    void Array::range_sum(int array[],int size)
+    {
+        int prefix[size];
+        prefix[0]=array[0];
+        for(int i=1;i<size;i++)
+        {
+            prefix[i]=prefix[i-1]+array[i];
+        }
+        int q;
+        cout<<"enter the number of queries"<<endl;
+        cin>>q;
+        for(int i=0;i<q;i++)
+        {
+            int l,r;
+            cout<<"enter the range"<<endl;
+            cin>>l>>r;
+            if(l==0)
+            {
+                cout<<prefix[r]<<endl;
+            }
+            else
+            {
+                cout<<prefix[r]-prefix[l-1]<<endl;
+            }
+        }
+    }
