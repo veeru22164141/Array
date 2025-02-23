@@ -116,6 +116,7 @@ bool Array::checkRotatedAndSorted(const vector<int>& arr) {
 
     // Check if the array is sorted and rotated in increasing order
     bool isIncreasingRotated = (increasing != 0) && (arr[n - 1] <= arr[0]);
+    std::cout<<"isIncreasingRotated: "<<isIncreasingRotated<<std::endl;
     for (int i = increasing + 1; i < n; ++i) {
         if (arr[i] < arr[i - 1]) {
             isIncreasingRotated = false;
@@ -125,6 +126,7 @@ bool Array::checkRotatedAndSorted(const vector<int>& arr) {
 
     // Check if the array is sorted and rotated in decreasing order
     bool isDecreasingRotated = (decreasing != 0) && (arr[n - 1] >= arr[0]);
+    std::cout<<"isDecreasingRotated: "<<isDecreasingRotated<<std::endl;
     for (int i = decreasing + 1; i < n; ++i) {
         if (arr[i] > arr[i - 1]) {
             isDecreasingRotated = false;
@@ -277,3 +279,296 @@ void Array::equilibrium_point2(int arr[], int n)
             cout<<array[i]<<" ";
         }
     }
+    //naive approach
+    int Array::largestElement(int arr[], int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            bool flag=false;
+            for(int j=0;j<n;j++)
+            {
+                if(arr[j]>arr[i])
+                {
+                    flag=true;
+                    break;
+                }
+            }
+            if(flag==false)
+            {
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+
+    //efficient approach
+    int Array::largestElement2(int arr[], int n)
+    {
+        int res=0;
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]>arr[res])
+            {
+                res=i;
+            }
+        }
+        return arr[res];
+    }
+
+    int Array::secondLargestElement(int arr[], int n)
+    {
+        int res=-1;
+        int largest=0;
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]>arr[largest])
+            {
+                res=largest;
+                largest=i;
+            }
+            else if(arr[i]!=arr[largest])
+            {
+                if(res==-1 || arr[i]>arr[res])
+                {
+                    res=i;
+                }
+            }
+        }
+        return res;
+    }
+
+    //naive approach
+    bool Array::isArraySorted(int arr[],int n)
+    {
+        bool ascending=false;
+        bool descending=false;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    ascending=true;
+                }
+                else if(arr[i]>arr[j])
+                {
+                    descending=true;
+                }
+
+            }
+        }
+        if(ascending==true && descending==false)
+        {
+            return true;
+        }
+        else if(ascending==false && descending==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool Array::isArraySorted2(int arr[], int n)
+    {
+        bool ascending=false;
+        bool descending=false;
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]>arr[i-1])
+            {
+                ascending=true;
+            }
+            else if(arr[i]<arr[i-1])
+            {
+                descending=true;
+            }
+        }
+        if(ascending==true && descending==false)
+        {
+            return true;
+        }
+        else if(ascending==false && descending==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+       
+    }
+
+//naive approach
+void Array::reverseArray(int arr[], int n)
+{
+    int low=0;
+    int high=n-1;
+    while(low<high)
+    {
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+        low++;
+        high--;
+    }
+}
+
+void Array::reverseArray(int arr[], int low, int high)
+{
+    while(low<high)
+    {
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+        low++;
+        high--;
+    }
+}
+
+//using extra space
+int Array::removeDuplicates(int arr[],int n)
+{
+    int temp[n];
+    temp[0]=arr[0];
+    int res=1;
+    for(int i=1;i<n;i++)
+    {
+        if(temp[res-1]!=arr[i])
+        {
+            temp[res]=arr[i];
+            res++;
+        }
+    }
+    for(int i=0;i<res;i++)
+    {
+        arr[i]=temp[i];
+    }
+    printArray(arr,res);
+    return res;
+}
+
+//efficient approach without using extra space
+int Array::removeDuplicates2(int arr[], int n)
+{
+    int res=1;
+    for(int i=1;i<n;i++)
+    {
+        if(arr[res-1]!=arr[i])
+        {
+            arr[res]=arr[i];
+            res++;
+        }
+    }
+    printArray(arr,res);
+    return res;
+
+}
+
+void Array::moveZeroesToEnd(int arr[], int n)
+{
+    int count=0;
+    int temp=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]!=0)
+        {
+            temp=arr[count];
+            arr[count]=arr[i];
+            arr[i]=temp;
+            
+            count++;
+        }
+    }
+    printArray(arr,n);
+}
+
+void Array::leftRotationByOne(int arr[], int n)
+{
+    int temp=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        arr[i-1]=arr[i];
+    }
+    arr[n-1]=temp;
+    //printArray(arr,n);
+}
+//naive approach Time complexity : O(d*n)  Auxiliary Space : O(1)
+
+void Array::leftRotationByD(int arr[], int n, int d)
+{
+    for(int i=0;i<d;i++)
+    {
+        leftRotationByOne(arr,n);
+    }
+   // printArray(arr,n);
+}
+
+//efficient approach Time complexity : O(n)  Auxiliary Space : O(d)
+void Array::leftRotationByD2(int arr[], int n, int d)
+{
+    int temp[d];
+    for(int i=0;i<d;i++)
+    {
+        temp[i]=arr[i];
+    }
+    for(int i=d;i<n;i++)
+    {
+        arr[i-d]=arr[i];
+    }
+    for(int i=0;i<d;i++)
+    {
+        arr[n-d+i]=temp[i];
+    }
+  //  printArray(arr,n);
+}
+
+//reversal method Time complexity : O(n) Auxiliary Space : O(1)
+void Array::leftRotationByD3(int arr[], int n, int d)
+{
+    reverseArray(arr,0,d-1);
+    reverseArray(arr,d,n-1);
+    reverseArray(arr,0,n-1);
+    //printArray(arr,n);
+}
+
+//naive approach Time complexity : O(n*n) Auxiliary Space : O(1)
+void Array::leadersInArray(int arr[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        bool flag=false;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[i]<=arr[j])
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag==false)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+}
+
+//efficient approach Time complexity : O(n) Auxiliary Space : O(1)
+void Array::leadersInArray2(int arr[], int n)
+{
+    int curr_leader=arr[n-1];
+    cout<<curr_leader<<" ";
+    for(int i=n-2;i>=0;i--)
+    {
+        if(curr_leader<arr[i])
+        {
+            curr_leader=arr[i];
+            cout<<curr_leader<<" ";
+        }
+    }
+}
+
+
+
