@@ -103,6 +103,14 @@ int main() {
     std::cout<<"leadersInArray2"<<std::endl;
     a.leadersInArray2(arr22,6);
 
+    int arr23[] = {2,3,10,6,4,8,1};
+    std::cout<<"maxDiffwithgreaterNumOnLeft"<<std::endl;
+    std::cout << a.maxDiffwithgreaterNumOnLeft(arr23,7) << std::endl;
+
+    std::cout<<"maxDiffwithgreaterNumOnLeft1"<<std::endl;
+
+    std::cout<< a.maxDiffwithgreaterNumberLeft1(arr23,7)<< std::endl;
+
     
     
 

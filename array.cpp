@@ -571,4 +571,36 @@ void Array::leadersInArray2(int arr[], int n)
 }
 
 
+int Array::maxDiffwithgreaterNumOnLeft(int arr[],int n)
+{
+    int maxDiff=0;
+    for(int i=0;i<n;i++)
+    {
+        
+        for(int j=i+1;j<n;j++)
+        {
+            int currDiff=arr[j]-arr[i];
+            if(currDiff>0 && currDiff> maxDiff)
+                maxDiff=currDiff;
+        }
+    }
+    return maxDiff;
+}
+//efficient approach with time Complexity:O(n) and Axuiliry space:O(1)
+int Array::maxDiffwithgreaterNumberLeft1(int arr[],int n)
+{
+    int max_diff= arr[1]-arr[0];
+    int min_num= arr[0];
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i] - min_num > max_diff)
+          max_diff = arr[i] - min_num;
+        if(min_num>arr[i])
+            min_num=arr[i];
+
+    }
+    return max_diff;
+}
+
+
 

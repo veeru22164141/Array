@@ -59,6 +59,9 @@ class Array {
 
         void leadersInArray(int arr[], int n);
         void leadersInArray2(int arr[], int n);
+
+        int maxDiffwithgreaterNumOnLeft(int arr[],int n);
+        int maxDiffwithgreaterNumberLeft1(int arr[],int n);
 };
 
 #endif // ARRAY_H
