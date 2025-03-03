@@ -209,3 +209,73 @@ Maximum Difference Problem with Order
     Input : arr = {7, 9, 5, 6, 3, 2}
     Output : 2
     Explanation : The maximum difference is between 9 and 7.
+    int maxDiffwithgreaterNumOnLeft(int arr[],int n);
+    int maxDiffwithgreaterNumberLeft1(int arr[],int n);
+
+Frequencies in a Sorted Array
+
+    Given a sorted array, arr[] consisting of N integers, the task is to find the frequencies of each array element.
+
+    Examples: 
+
+    Input: arr[] = {1, 1, 1, 2, 3, 3, 5, 5, 8, 8, 8, 9, 9, 10} 
+    Output: Frequency of 1 is: 3
+                Frequency of 2 is: 1
+                Frequency of 3 is: 2
+                Frequency of 5 is: 2
+                Frequency of 8 is: 3
+                Frequency of 9 is: 2
+                Frequency of 10 is: 1
+
+    Input: arr[] = {2, 2, 6, 6, 7, 7, 7, 11} 
+    Output:  Frequency of 2 is: 2
+                Frequency of 6 is: 2
+                Frequency of 7 is: 3
+                Frequency of 11 is: 1
+            void freqOfElementInSortedArray(int arr[],int n);
+        void freqOfElementInSortedArray1(int arr[],int n);
+
+Stock Buy and Sell Problem
+
+    In a realm where numbers hold secrets, a captivating challenge awaits, which is, Stock Buy and Sell Problem !!!
+
+    Our Task: The cost of a stock on each day is given in an array. Find the maximum profit that you can make by buying and selling on those days. If the given array of prices is sorted in decreasing order, then profit cannot be earned at all.
+    Examples:
+
+    Input: arr[] = {100, 180, 260, 310, 40, 535, 695}
+    Output: 865
+    Explanation: Buy the stock on day 0 and sell it on day 3 => 310 – 100 = 210
+                        Buy the stock on day 4 and sell it on day 6 => 695 – 40 = 655
+                        Maximum Profit  = 210 + 655 = 865
+    Input: arr[] = {4, 2, 2, 2, 4}
+    Output: 2
+    Explanation: Buy the stock on day 1 and sell it on day 4 => 4 – 2 = 2
+                        Maximum Profit  = 2
+    int maxProfitFromStock(int arr[],int n);
+        int maxProfitFromStock(int arr[],int start,int end);
+        int maxProfitFromStock1(int arr[],int n);
+
+Trapping Rain Water
+
+    Given an array of N non-negative integers arr[] representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+
+    Examples:  
+
+    Input: arr[] = {2, 0, 2}
+    Output: 2
+    Explanation: The structure is like below.
+    We can trap 2 units of water in the middle gap.
+
+    Input: arr[]   = {3, 0, 2, 0, 4}
+    Output: 7
+    Explanation: Structure is like below.
+    We can trap “3 units” of water between 3 and 2,
+    “1 unit” on top of bar 2 and “3 units” between 2 and 4.
+
+    Input: arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
+    Output: 6
+    Explanation: The structure is like below.
+    Trap “1 unit” between first 1 and 2, “4 units” between
+    first 2 and 3 and “1 unit” between second last 1 and last 2
+
+

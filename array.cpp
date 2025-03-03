@@ -601,6 +601,124 @@ int Array::maxDiffwithgreaterNumberLeft1(int arr[],int n)
     }
     return max_diff;
 }
+// naive approach time complexity:O(n*2) 
+void Array::freqOfElementInSortedArray(int arr[],int n)
+{
+    int count=0;
+    for(int i=0;i<n;i=i+count)
+    {
+        count=0;
+        for(int j=0;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+                count++;
+        }
+        
+        std::cout<<"frequency of "<<arr[i]<<" is : "<<count<<std::endl;
+        
+
+    }
+}
+
+// time complexity:O(n)
+void Array::freqOfElementInSortedArray1(int arr[],int n)
+{
+    int freq=1;
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]==arr[i-1])
+        {
+            freq++;
+        }
+        else
+        {
+            std::cout<<"frequency of "<<arr[i -1]<<" is : "<<freq<<std::endl;
+            freq=1; 
+        }
+    }
+    std::cout<<"frequency of "<<arr[n -1]<<" is : "<<freq<<std::endl;
+}
 
 
+// naive approach time complexity: O(n*2)
+int Array::maxProfitFromStock(int arr[],int n)
+{
+    int maxProfit=0;
+    for(int i=0;i<n;)
+    {
+       
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[j]<arr[j-1])
+            {
+                maxProfit = maxProfit + (arr[j -1] -arr[i]);
+                if(j==n-1)
+                    i=n;
+                else
+                    i=j;
+                break;
+            }
+            if(j == n-1)
+            {
+                maxProfit = maxProfit + (arr[j] -arr[i]);
+                i=n;
+            }
+             
+        }
+    }
+    return maxProfit;
+}
+//recursive approach  time complexity: O(n*2)
+int Array::maxProfitFromStock(int arr[],int start,int end)
+{
+    if(end<=start)
+        return 0;
+    int profit=0;
+    for(int i = start; i<end;i++)
+    {
+        for(int j=i+1;j<=end;j++)
+        {
+            if(arr[j]>arr[i])
+            {
+                int current_profit = arr[j] - arr[i] + maxProfitFromStock(arr,start,i-1) +maxProfitFromStock(arr,j+1,end);
+                profit= current_profit> profit?current_profit:profit;
+            }
+                
+        }
+    }
+    return profit;
+}
+int Array::maxProfitFromStock1(int arr[],int n)
+{
+    int maxProfit=0;
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]>arr[i-1])
+            maxProfit=maxProfit + arr[i] - arr[i-1];
+    }
+    return maxProfit;
+}
 
+int Array::waterTraped(int arr[],int n)
+{
+    int res=0;
+    for(int i=0;i<n;i++)
+    {
+        //find max element on left
+        int left = arr[i];
+        for(int j=0;j<n;j++)
+        {
+            left = left<arr[j]?arr[j]:left;
+        }
+
+        int right=arr[i];
+        for(int j=i+1;j<n;j++)
+        {
+            right = right<arr[j]?arr[j]:right;
+        }
+
+        int minOfRightLeft = right<left?right:left;
+        res = res + minOfRightLeft -arr[i];
+    }
+    return res;
+}

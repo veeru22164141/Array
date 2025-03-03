@@ -4,6 +4,6 @@ project(MyProgram)
 set(CMAKE_CXX_STANDARD 11)
 
 # Add your source files here
-set(SOURCES main.cpp array.cpp)
+set(SOURCES main.cpp array.cpp test.cpp)
 
 add_executable(MyProgram ${SOURCES})

@@ -62,6 +62,15 @@ class Array {
 
         int maxDiffwithgreaterNumOnLeft(int arr[],int n);
         int maxDiffwithgreaterNumberLeft1(int arr[],int n);
+
+        void freqOfElementInSortedArray(int arr[],int n);
+        void freqOfElementInSortedArray1(int arr[],int n);
+
+        int maxProfitFromStock(int arr[],int n);
+        int maxProfitFromStock(int arr[],int start,int end);
+        int maxProfitFromStock1(int arr[],int n);
+
+        int waterTraped(int arr[],int n);
 };
 
 #endif // ARRAY_H
