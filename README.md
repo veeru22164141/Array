@@ -264,18 +264,66 @@ Trapping Rain Water
     Input: arr[] = {2, 0, 2}
     Output: 2
     Explanation: The structure is like below.
+    | |
+    |_|
+    202
     We can trap 2 units of water in the middle gap.
 
     Input: arr[]   = {3, 0, 2, 0, 4}
     Output: 7
     Explanation: Structure is like below.
+        |   
+    |   |
+    | | |
+    |_|_|
+    30204
     We can trap “3 units” of water between 3 and 2,
     “1 unit” on top of bar 2 and “3 units” between 2 and 4.
 
     Input: arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
     Output: 6
     Explanation: The structure is like below.
+           |
+       |   || |
+    _|_||_||||||
+    010210132121
     Trap “1 unit” between first 1 and 2, “4 units” between
     first 2 and 3 and “1 unit” between second last 1 and last 2
 
+    int Array::waterTraped(int arr[],int n);
+    int Array::waterTraped1(int arr[],int n);
+
+Maximum Subarray Sum
+
+    Given an array arr[], the task is to find the elements of a contiguous subarray of numbers that has the largest sum.
+
+    Examples:
+
+    Input: arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+    Output: [4, -1, -2, 1, 5]
+    Explanation: 
+    In the above input the maximum contiguous subarray sum is 7 and the elements of the subarray are [4, -1, -2, 1, 5]
+
+    Input: arr = [-2, -5, 6, -2, -3, 1, 5, -6] 
+    Output: [6, -2, -3, 1, 5] 
+    Explanation: 
+    In the above input the maximum contiguous subarray sum is 7 and the elements 
+    of the subarray are [6, -2, -3, 1, 5]
+    void subArraywithMaxSum(std::vector<int>nums);
+
+Longest Even Odd Subarray
+
+    Given an array a[] of N integers, the task is to find the length of the longest Alternating Even Odd subarray present in the array. 
+
+    Examples: 
+
+    Input: a[] = {1, 2, 3, 4, 5, 7, 9} 
+    Output: 5 
+    Explanation: 
+    The subarray {1, 2, 3, 4, 5} has alternating even and odd elements.
+
+    Input: a[] = {1, 3, 5} 
+    Output: 0 
+    Explanation: 
+    There is no such alternating sequence possible. 
 

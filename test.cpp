@@ -1,6 +1,6 @@
 #include "test.h"
 #include "array.h"
-void maxIndexDiff_test()
+void Test::maxIndexDiff_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -9,7 +9,7 @@ void maxIndexDiff_test()
     std::cout << a.maxIndexDiff2(arr) << std::endl;
 
 }
-void largestAndSecondLargest_test()
+void Test::largestAndSecondLargest_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -20,7 +20,7 @@ void largestAndSecondLargest_test()
     }
     std::cout << std::endl;
 }
-void checkRotatedAndSorted_test()
+void Test::checkRotatedAndSorted_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -32,7 +32,7 @@ void checkRotatedAndSorted_test()
     std::cout << a.checkRotatedAndSorted(arr3) << std::endl;
      
 }
-void reverseInGroups_test()
+void Test::reverseInGroups_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -43,7 +43,7 @@ void reverseInGroups_test()
     }
     std::cout << std::endl;
 }
-void equilibrium_point_test()
+void Test::equilibrium_point_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -55,25 +55,30 @@ void equilibrium_point_test()
     std::cout<<"equilibrium point2"<<std::endl;
     a.equilibrium_point2(arr6,5);
 }
-void maxSubArraySum_test()
+void Test::maxSubArraySum_test()
 { 
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;   
     std::cout<<"maxSubArraySum"<<std::endl;
     int arr8[] = {-3,4,-1,-2,1,5};
     std::cout << a.maxSubArraySum(arr8,6) << std::endl;
+    int arr[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+    std::cout << a.maxSubArraySum(arr,8) << std::endl;
 }
-void mergeTwoSortedArrays_test()
+void Test::mergeTwoSortedArrays_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
     std::cout<<"mergeTwoSortedArrays"<<std::endl;
     int arr9[] = {1,3,5,7};
     int arr10[] = {0,2,6,8,9};
+    a.printArray(arr9,4);
+    a.printArray(arr10,5);
     a.mergeTwoSortedArrays(arr9,arr10,4,5);
+    std::cout<<std::endl;
 }
 
-void largestElement_test()
+void Test::largestElement_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -83,7 +88,7 @@ void largestElement_test()
     std::cout<<"largestElement2"<<std::endl;
     std::cout << a.largestElement2(arr11,4) << std::endl;
 }
-void secondLargestElement_test()
+void Test::secondLargestElement_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -92,7 +97,7 @@ void secondLargestElement_test()
     std::cout << a.secondLargestElement(arr12,6) << std::endl;
 }
 
-void isArraySorted_test()
+void Test::isArraySorted_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -102,7 +107,7 @@ void isArraySorted_test()
     std::cout<<"is Array Sorted2"<<std::endl;
     std::cout << a.isArraySorted2(arr12,6) << std::endl;
 }
-void reverseArray_test()
+void Test::reverseArray_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -111,7 +116,7 @@ void reverseArray_test()
     a.reverseArray(arr13.data(),5);
     a.printVector(arr13);
 }
-void removeDuplicates_test()
+void Test::removeDuplicates_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -126,7 +131,7 @@ void removeDuplicates_test()
     std::cout << new_size << std::endl;
     a.printArray(arr15,new_size);
 }
-void moveZeroesToEnd_test()
+void Test::moveZeroesToEnd_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -135,7 +140,7 @@ void moveZeroesToEnd_test()
     a.moveZeroesToEnd(arr16,5);
     a.printArray(arr16,5);
 }
-void leftRotationByOne_test()
+void Test::leftRotationByOne_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -145,7 +150,7 @@ void leftRotationByOne_test()
     a.printArray(arr17,7);
 }
 
-void leftRotationByD_test()
+void Test::leftRotationByD_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -165,7 +170,7 @@ void leftRotationByD_test()
     a.printArray(arr20,7);
 }
 
-void leadersInArray_test()
+void Test::leadersInArray_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -177,7 +182,7 @@ void leadersInArray_test()
     std::cout<<"leadersInArray2"<<std::endl;
     a.leadersInArray2(arr22,6);
 }
-void maxDiffwithgreaterNumOnLeft_test()
+void Test::maxDiffwithgreaterNumOnLeft_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -191,7 +196,7 @@ void maxDiffwithgreaterNumOnLeft_test()
 
 }
 
-void freqOfElementInSortedArray_test()
+void Test::freqOfElementInSortedArray_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -202,7 +207,7 @@ void freqOfElementInSortedArray_test()
     std::cout<<"freqOfElementInSortedArray1"<<std::endl;
     a.freqOfElementInSortedArray1(arr24,14);
 }
-void maxProfitFromStock_test()
+void Test::maxProfitFromStock_test()
 {
     std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
     Array a;
@@ -219,4 +224,46 @@ void maxProfitFromStock_test()
     std::cout<<a.maxProfitFromStock(arr27,0,5)<<std::endl;
     std::cout<<"maxProfitFromStock1"<<std::endl;
     std::cout<<a.maxProfitFromStock1(arr27,6)<<std::endl;
+}
+
+void Test::waterTraped_test()
+{
+    std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;   
+    Array a;
+
+    std::cout<<"waterTraped "<<std::endl;
+    int arr[] = {2, 0, 2};
+    a.printArray(arr,3);
+    std::cout<<"Total water trapped:"<<a.waterTraped(arr,3)<<std::endl;
+    std::cout<<"waterTraped1 "<<std::endl;
+    std::cout<<"Total water trapped:"<<a.waterTraped1(arr,3)<<std::endl;
+    int arr1[]   = {3, 0, 2, 0, 4};
+    a.printArray(arr1,5);
+    std::cout<<"waterTraped1 "<<std::endl;
+    std::cout<<"Total water trapped:"<<a.waterTraped1(arr1,5)<<std::endl;
+    int arr2[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    a.printArray(arr2,12);
+    std::cout<<"waterTraped "<<std::endl;
+    std::cout<<"Total water trapped:"<<a.waterTraped(arr2,12)<<std::endl;
+    std::cout<<"waterTraped1 "<<std::endl;
+    std::cout<<"Total water trapped:"<<a.waterTraped1(arr2,12)<<std::endl;
+    
+
+
+}
+
+void Test::subArraywithMaxSum_test()
+{
+    Array a;
+    std::cout<<"========================================="<<__FUNCTION__<<"======================================================="<<std::endl;
+    std::cout<<"subArraywithMaxSum "<< std::endl;
+    std::vector<int>arr = {-2, -3, 4, -1, -2, 1, 5, -3};
+    a.subArraywithMaxSum(arr);
+    arr={-2, -5, 6, -2, -3, 1, 5, -6};
+    a.subArraywithMaxSum(arr);
+}
+
+void Test::longestEvenOddSubarray_test()
+{
+
 }

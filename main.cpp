@@ -22,11 +22,15 @@ void printList()
         std::cout<<"18: maxDiffwithgreaterNumOnLeft_test()"<<std::endl;
         std::cout<<"19: freqOfElementInSortedArray_test()"<<std::endl;
         std::cout<<"20: maxProfitFromStock_test()"<<std::endl;
+        std::cout<<"21: waterTraped_test()"<<std::endl;
+        std::cout<<"22: subArraywithMaxSum_test()"<<std::endl;
+        std::cout<<"23: longestEvenOddSubarray_test()"<<std::endl;
 
 }
 int main() 
 {
-    int index=-1;    
+    int index=-1; 
+    Test t;   
     do
     {
         /* code */
@@ -41,61 +45,70 @@ int main()
                 printList();
             break;
             case 2:
-                maxIndexDiff_test();
+                t.maxIndexDiff_test();
             break;
             case 3:
-                largestAndSecondLargest_test();
+                t.largestAndSecondLargest_test();
             break;
             case 4:
-                checkRotatedAndSorted_test();
+                t.checkRotatedAndSorted_test();
             break;
             case 5:
-                reverseInGroups_test();
+                t.reverseInGroups_test();
             break;
             case 6:
-                equilibrium_point_test();
+                t.equilibrium_point_test();
             break;
             case 7:
-                maxSubArraySum_test();
+                t.maxSubArraySum_test();
             break;
             case 8:
-                mergeTwoSortedArrays_test();
+                t.mergeTwoSortedArrays_test();
             break;
             case 9:
-                largestElement_test();
+                t.largestElement_test();
             break;
             case 10:
-                secondLargestElement_test();
+                t.secondLargestElement_test();
             break;
             case 11:
-                isArraySorted_test();
+                t.isArraySorted_test();
             break;
             case 12:
-                reverseArray_test();
+                t.reverseArray_test();
             break;
             case 13:
-                removeDuplicates_test();
+                t.removeDuplicates_test();
             break;
             case 14:
-                moveZeroesToEnd_test();
+                t.moveZeroesToEnd_test();
             break;
             case 15:
-                leftRotationByOne_test();
+                t.leftRotationByOne_test();
             break;
             case 16:
-                leftRotationByD_test();
+                t.leftRotationByD_test();
             break;
             case 17:
-                leadersInArray_test();
+                t.leadersInArray_test();
             break;
             case 18:
-                maxDiffwithgreaterNumOnLeft_test();
+                t.maxDiffwithgreaterNumOnLeft_test();
             break;
             case 19:
-                freqOfElementInSortedArray_test();
+                t.freqOfElementInSortedArray_test();
             break;
             case 20:
-                maxProfitFromStock_test();
+                t.maxProfitFromStock_test();
+            break;
+            case 21:
+                t.waterTraped_test();
+            break;
+            case 22:
+                t.subArraywithMaxSum_test();
+            break;
+            case 23:
+                t.longestEvenOddSubarray_test();
             break;
         }
         

@@ -698,7 +698,7 @@ int Array::maxProfitFromStock1(int arr[],int n)
     }
     return maxProfit;
 }
-
+//Brute Approach Time complexity: O(n*2) Space Complexity: O(1)
 int Array::waterTraped(int arr[],int n)
 {
     int res=0;
@@ -720,5 +720,96 @@ int Array::waterTraped(int arr[],int n)
         int minOfRightLeft = right<left?right:left;
         res = res + minOfRightLeft -arr[i];
     }
+    return res;
+}
+
+//PreCalculation
+int Array::waterTraped1(int arr[],int n)
+{
+    int total=0;
+    int lArr[n]={0};
+    int lMax=arr[0];
+    int rArr[n]={0};
+    int rMax=arr[n-1];
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]>=lMax)
+            lArr[i]=arr[i];
+        else
+            lArr[i]=lMax;
+        if(arr[(n-1)-i]>=rMax)
+            rArr[i]=arr[(n-1)-i];
+        else
+            rArr[i]=rMax;
+         
+        
+    }
+   // printArray(lArr,n);
+  //  printArray(rArr,n);
+    for(int i=0;i<n;i++)
+    {
+        int minOfleftArrandRightArr= lArr[i]<rArr[i]?lArr[i]:rArr[i];
+       // std::cout<<"minOfleftArrandRightArr "<<minOfleftArrandRightArr<<std::endl;
+        total += minOfleftArrandRightArr - arr[i];
+    }
+    return total;
+}
+
+void Array::subArraywithMaxSum(std::vector<int>& nums)
+{
+    int endIndex, curMax=nums[0];
+    int globalMax=nums[0];
+    for(int i=0;i<nums.size();i++)
+    {
+       
+       curMax =  nums[i]>(nums[i]+curMax)?nums[i]:(nums[i]+curMax);
+       if(curMax>globalMax)
+       {
+            globalMax = curMax;
+            endIndex=i;
+       }
+
+    }
+
+    int startIndex = endIndex;
+    curMax = globalMax;
+    while(startIndex >=0)
+    {
+        globalMax -= nums[startIndex];
+        if(globalMax ==0)
+            break;
+        startIndex--;
+    }
+
+    for(int i=startIndex;i<=endIndex;++i)
+    {
+        std::cout<<nums[i]<<" ";
+    }
+    std::cout<<"\n Max sum: "<<curMax<<std::endl;
+
+    
+
+}
+int Array::longestEvenOddSubarray(int arr[],int n)
+{
+    int count;
+    int res=1;
+    for(int i=0;i<n;i++)
+    {
+        count =1;
+        for(int j=i+1;j<n;j++)
+        {
+            if((arr[j]%2==0 &&arr[j-1]%2!=0) || (arr[j]%2!=0 && arr[j-1]%2==0))
+              count++;
+            else
+              break;
+        }
+
+        res= res>count?res:count;
+        
+    }
+    if (res == 1)
+        return 0;
+
     return res;
 }

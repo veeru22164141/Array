@@ -71,6 +71,11 @@ class Array {
         int maxProfitFromStock1(int arr[],int n);
 
         int waterTraped(int arr[],int n);
+        int waterTraped1(int arr[],int n);
+
+        void subArraywithMaxSum(std::vector<int>& nums);
+
+        int longestEvenOddSubarray(int arr[],int n);
 };
 
 #endif // ARRAY_H
