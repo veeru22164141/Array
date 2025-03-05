@@ -813,3 +813,28 @@ int Array::longestEvenOddSubarray(int arr[],int n)
 
     return res;
 }
+
+int Array::longestEvenOddSubarray1(int arr[],int n)
+{
+    int currCount=1;
+    int maxCount=1;
+
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]%2!=arr[i-1]%2)
+         currCount++;
+        else
+        {
+            maxCount=currCount>maxCount?currCount:maxCount;
+            currCount=1;
+        }
+    }
+
+    maxCount=currCount>maxCount?currCount:maxCount;
+
+    if(maxCount ==1)
+        return 0;
+    return maxCount;
+
+
+}

@@ -265,5 +265,19 @@ void Test::subArraywithMaxSum_test()
 
 void Test::longestEvenOddSubarray_test()
 {
+    Array a;
+    int arr[]={1, 2, 3, 4, 5, 7, 9};
+    std::cout<<"longestEvenOddSubarray "<<std::endl;
+    std::cout<<a.longestEvenOddSubarray(arr,7)<<std::endl;
+
+    std::cout<<"longestEvenOddSubarray1 "<<std::endl;
+    std::cout<<a.longestEvenOddSubarray1(arr,7)<<std::endl;
+
+    int arr1[]={1, 3, 5};
+    std::cout<<"longestEvenOddSubarray "<<std::endl;
+    std::cout<<a.longestEvenOddSubarray(arr1,3)<<std::endl;
+
+    std::cout<<"longestEvenOddSubarray1 "<<std::endl;
+    std::cout<<a.longestEvenOddSubarray1(arr1,3)<<std::endl;
 
 }

@@ -76,6 +76,7 @@ class Array {
         void subArraywithMaxSum(std::vector<int>& nums);
 
         int longestEvenOddSubarray(int arr[],int n);
+        int longestEvenOddSubarray1(int arr[],int n);
 };
 
 #endif // ARRAY_H
